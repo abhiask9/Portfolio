@@ -344,6 +344,37 @@ body {
     font-weight: 600;
     color: var(--secondary-color);
     transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.company-badge-logo {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: transparent;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(0, 217, 255, 0.18);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.company-badge-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.company-badge span {
+    font-size: 1rem;
+    display: block;
 }
 
 .company-badge:hover {
@@ -481,21 +512,38 @@ body {
 
 .timeline-marker {
     position: absolute;
-    left: -15px;
-    top: 0;
-    width: 32px;
-    height: 32px;
-    background: var(--secondary-color);
+    left: -28px;
+    top: 6px;
+    width: 52px;
+    height: 52px;
+    background: transparent;
     border-radius: 50%;
-    border: 4px solid var(--primary-color);
+    border: 2px solid rgba(0, 217, 255, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    overflow: hidden;
     transition: all 0.3s ease;
 }
 
+.timeline-marker img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
 .timeline-item:hover .timeline-marker {
-    width: 40px;
-    height: 40px;
-    left: -19px;
-    box-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
+    width: 78px;
+    height: 78px;
+    left: -39px;
+    box-shadow: 0 0 24px rgba(0, 217, 255, 0.18), 0 10px 24px rgba(0, 0, 0, 0.16);
+}
+
+.timeline-item:hover .timeline-marker img {
+    transform: scale(1.05);
 }
 
 .timeline-content {
@@ -509,6 +557,60 @@ body {
 .timeline-item:hover .timeline-content {
     box-shadow: 0 5px 20px rgba(0, 217, 255, 0.2);
     border-left-color: var(--accent-color);
+}
+
+.timeline-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.timeline-company-logo {
+    width: 56px;
+    height: 56px;
+    min-width: 56px;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 217, 255, 0.1);
+    border-radius: 14px;
+    border: 1px solid rgba(0, 217, 255, 0.45);
+    padding: 0.5rem;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+    transition: all 0.3s ease;
+}
+
+.timeline-company-logo img,
+.timeline-company-logo svg {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+
+.timeline-item:hover .timeline-company-logo {
+    background: linear-gradient(135deg, rgba(0, 217, 255, 0.25), rgba(255, 165, 0, 0.25));
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
+    border-color: var(--accent-color);
+    transform: scale(1.03);
+}
+
+.timeline-item:hover .timeline-company-logo img,
+.timeline-item:hover .timeline-company-logo svg {
+    transform: scale(1.03);
+}
+
+.timeline-heading-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    min-width: 0;
 }
 
 .timeline-date {
